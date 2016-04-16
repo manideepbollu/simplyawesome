@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416130149) do
+ActiveRecord::Schema.define(version: 20160416181453) do
 
   create_table "emotions", force: :cascade do |t|
     t.string   "emotion_type"
@@ -27,9 +27,11 @@ ActiveRecord::Schema.define(version: 20160416130149) do
     t.string   "entity"
     t.string   "entity_type"
     t.integer  "review_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.text     "property"
+    t.string   "sentiment"
+    t.string   "sentiment_type"
   end
 
   add_index "entities", ["review_id"], name: "index_entities_on_review_id"
@@ -92,18 +94,5 @@ ActiveRecord::Schema.define(version: 20160416130149) do
     t.text     "nearby_restaurants"
     t.boolean  "primary"
   end
-
-  create_table "sentiments", force: :cascade do |t|
-    t.string   "sentiment_type"
-    t.string   "score"
-    t.text     "comment"
-    t.integer  "entity_id"
-    t.integer  "review_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  add_index "sentiments", ["entity_id"], name: "index_sentiments_on_entity_id"
-  add_index "sentiments", ["review_id"], name: "index_sentiments_on_review_id"
 
 end

@@ -93,3 +93,460 @@ Migrating to AddPrimaryToScenarios (20160416130149)
             FROM sqlite_temp_master
             WHERE name='index_sentiments_on_entity_id' AND type='index'
 
+
+
+Started GET "/" for ::1 at 2016-04-16 13:07:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StarterController#home as HTML
+  Rendered starter/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4121ms (Views: 4112.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-16 13:07:05 -0500
+Processing by StarterController#home as HTML
+  Rendered starter/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 111ms (Views: 110.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/scenarios" for ::1 at 2016-04-16 13:07:11 -0500
+Processing by ScenariosController#index as HTML
+  [1m[35mScenario Load (0.4ms)[0m  SELECT "scenarios".* FROM "scenarios" WHERE "scenarios"."primary" = ?  [["primary", "t"]]
+  Rendered scenarios/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 142ms (Views: 120.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/scenarios/new" for ::1 at 2016-04-16 13:07:13 -0500
+Processing by ScenariosController#new as HTML
+  Rendered scenarios/_form.html.erb (33.8ms)
+  Rendered scenarios/new.html.erb within layouts/google-layout (39.3ms)
+Completed 200 OK in 155ms (Views: 117.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/scenarios/new" for ::1 at 2016-04-16 13:07:35 -0500
+Processing by ScenariosController#new as HTML
+  Rendered scenarios/_form.html.erb (41.4ms)
+  Rendered scenarios/new.html.erb within layouts/google-layout (44.6ms)
+Completed 200 OK in 193ms (Views: 191.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/core.self-8f459e43998bc1b4e071a78f833ffd63c364840d6af233942d70c8086631c378.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/assessor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/scenarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/starter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-5277268fc75b8d6e851ccb5ca12e162c7440315d70974f34db800bc70330f135.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-2d6dfccae4fba2fe27d00372b974d4540d75a00cea6ceaa0a6aa33852b9d3ac3.css?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/rails.validations.self-23cdeaea9427f7c6a16f3d069d84a62b5260cbe605e6196b636a771d7c65c1a4.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/main.self-5f269b8b9451d506d16f475546af880ac001ecd77739f75f1ae7ae0d23fbb9f9.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/mapInit.self-2b726c5f67e59c2aaa4e8db1ebdd029b64e5fd7e77b885775e9cdfb47a3af273.js?body=1" for ::1 at 2016-04-16 13:07:35 -0500
+
+
+Started GET "/assets/looking_around-712ee7d58958ff02c390abebfe5d4ec73ae9cab87f0fccbf83999e86a8363541.gif" for ::1 at 2016-04-16 13:07:45 -0500
+
+
+Started GET "/assets/people_loading-abd5a15bdb8bfb3bfb8a8baa9907cfe88d2fcd84fbdf51d87aae3073363dc9c9.gif" for ::1 at 2016-04-16 13:07:45 -0500
+
+
+Started GET "/assets/1392662627519-f8316b42840c4b5ead4c00fcd871e921f5d35b1a76dd8f815a4424ea43e463ce.gif" for ::1 at 2016-04-16 13:07:45 -0500
+
+
+Started GET "/scenarios/new" for ::1 at 2016-04-16 13:08:25 -0500
+Processing by ScenariosController#new as HTML
+  Rendered scenarios/_form.html.erb (20.3ms)
+  Rendered scenarios/new.html.erb within layouts/google-layout (21.8ms)
+Completed 200 OK in 139ms (Views: 138.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/core.self-8f459e43998bc1b4e071a78f833ffd63c364840d6af233942d70c8086631c378.css?body=1" for ::1 at 2016-04-16 13:08:25 -0500
+
+
+Started GET "/assets/starter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:08:25 -0500
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:08:25 -0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-16 13:08:25 -0500
+
+
+Started GET "/assets/scenarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:08:25 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-5277268fc75b8d6e851ccb5ca12e162c7440315d70974f34db800bc70330f135.css?body=1" for ::1 at 2016-04-16 13:08:25 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" for ::1 at 2016-04-16 13:08:25 -0500
+
+
+Started GET "/assets/assessor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-2d6dfccae4fba2fe27d00372b974d4540d75a00cea6ceaa0a6aa33852b9d3ac3.css?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/rails.validations.self-23cdeaea9427f7c6a16f3d069d84a62b5260cbe605e6196b636a771d7c65c1a4.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/main.self-5f269b8b9451d506d16f475546af880ac001ecd77739f75f1ae7ae0d23fbb9f9.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/mapInit.self-2b726c5f67e59c2aaa4e8db1ebdd029b64e5fd7e77b885775e9cdfb47a3af273.js?body=1" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/looking_around-712ee7d58958ff02c390abebfe5d4ec73ae9cab87f0fccbf83999e86a8363541.gif" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/people_loading-abd5a15bdb8bfb3bfb8a8baa9907cfe88d2fcd84fbdf51d87aae3073363dc9c9.gif" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/1392662627519-f8316b42840c4b5ead4c00fcd871e921f5d35b1a76dd8f815a4424ea43e463ce.gif" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-39ab7ccd9f4e82579da78a9241265df288d8eb65dbbd7cf48aed2d0129887df5.png" for ::1 at 2016-04-16 13:08:26 -0500
+
+
+Started GET "/scenarios/new" for ::1 at 2016-04-16 13:08:59 -0500
+Processing by ScenariosController#new as HTML
+  Rendered scenarios/_form.html.erb (9.0ms)
+  Rendered scenarios/new.html.erb within layouts/google-layout (10.1ms)
+Completed 200 OK in 172ms (Views: 170.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/assessor.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/core.self-8f459e43998bc1b4e071a78f833ffd63c364840d6af233942d70c8086631c378.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/starter.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/scenarios.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-df1da30301997b52795cb0213bccd335f2897b65f84d1d7d7c63c04f048d902f.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-23329dbe1961b938278306c019037fe36ff6ccb28193f1038e52ccbf52858163.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-2d6dfccae4fba2fe27d00372b974d4540d75a00cea6ceaa0a6aa33852b9d3ac3.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-5277268fc75b8d6e851ccb5ca12e162c7440315d70974f34db800bc70330f135.css?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/rails.validations.self-23cdeaea9427f7c6a16f3d069d84a62b5260cbe605e6196b636a771d7c65c1a4.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/mapInit.self-2b726c5f67e59c2aaa4e8db1ebdd029b64e5fd7e77b885775e9cdfb47a3af273.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/main.self-5f269b8b9451d506d16f475546af880ac001ecd77739f75f1ae7ae0d23fbb9f9.js?body=1" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/looking_around-712ee7d58958ff02c390abebfe5d4ec73ae9cab87f0fccbf83999e86a8363541.gif" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/people_loading-abd5a15bdb8bfb3bfb8a8baa9907cfe88d2fcd84fbdf51d87aae3073363dc9c9.gif" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/assets/1392662627519-f8316b42840c4b5ead4c00fcd871e921f5d35b1a76dd8f815a4424ea43e463ce.gif" for ::1 at 2016-04-16 13:09:00 -0500
+
+
+Started GET "/scenarios/get-restaurants.json?term=M" for ::1 at 2016-04-16 13:09:11 -0500
+Processing by ScenariosController#get_restaurants as JSON
+  Parameters: {"term"=>"M"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/scenarios/get-restaurants.json?term=Mia+Piz" for ::1 at 2016-04-16 13:09:13 -0500
+Processing by ScenariosController#get_restaurants as JSON
+  Parameters: {"term"=>"Mia Piz"}
+Completed 200 OK in 1386ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/scenarios/get-restaurants.json?term=Mia+Pizz" for ::1 at 2016-04-16 13:09:14 -0500
+Processing by ScenariosController#get_restaurants as JSON
+  Parameters: {"term"=>"Mia Pizz"}
+Completed 200 OK in 640ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/scenarios" for ::1 at 2016-04-16 13:09:22 -0500
+Processing by ScenariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jXl7jCIz+8Zfu/EoyeqooD1ql1TfrHgy6sUeGXEdPQkADjJDAGV0chDNWa92DZSe2erw9GYVO8WpXbCW7IvGPg==", "scenario"=>{"business_name"=>"Mama Mia Pizza & Pasta", "email"=>"manideep@msn.com", "location_lat"=>"32.785194", "location_lng"=>"-96.780992", "zomato_restaurant_id"=>"16944525", "zomato_address"=>"2935 Elm Street, Dallas, TX 75226", "zomato_cuisines"=>"Italian, Pizza", "zomato_user_rating"=>"4.2", "zomato_postal_code"=>"75226", "zomato_loc_city_id"=>"276", "zomato_loc_city"=>"Dallas", "zomato_rating_text"=>"Excellent", "zomato_rating_color"=>"3F7E00", "zomato_votes_count"=>"407", "zomato_has_online_delivery"=>"0", "zomato_price_range"=>"2", "zomato_average_cost_for_two"=>"30", "zomato_thumb"=>"https://b.zmtcdn.com/data/pictures/5/16944525/0911190c70e78de16adca01bfe933f95_res_featured_thumb.jpg"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mScenario Exists (0.2ms)[0m  SELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16944525 LIMIT 1
+  [1m[36mScenario Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16953545 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Serious Pizza"], ["zomato_restaurant_id", 16953545], ["location_lat", "32.7848694444"], ["location_lng", "-96.7833638889"], ["zomato_address", "2807 Elm Street, Dallas, TX 75226"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75226"], ["zomato_cuisines", "Pizza"], ["zomato_user_rating", 4.0], ["zomato_rating_text", "Very Good"], ["zomato_rating_color", "5BA829"], ["zomato_votes_count", 221], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 1], ["zomato_average_cost_for_two", "25"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/5/16953545/ebec6751397db871ddfd8bf6e4d668ef_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.342962"], ["updated_at", "2016-04-16 18:09:49.342962"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16947626 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "St. Pete's Dancing Marlin"], ["zomato_restaurant_id", 16947626], ["location_lat", "32.7831222222"], ["location_lng", "-96.7833722222"], ["zomato_address", "2730 Commerce Street, Dallas, TX 75226"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75226"], ["zomato_cuisines", "Seafood, Italian, Bar Food"], ["zomato_user_rating", 3.8], ["zomato_rating_text", "Very Good"], ["zomato_rating_color", "5BA829"], ["zomato_votes_count", 125], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "50"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/6/16947626/e6b81132fdf35f2203f1f12ac2ece524_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.347623"], ["updated_at", "2016-04-16 18:09:49.347623"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16949500 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Zini's Pizzeria"], ["zomato_restaurant_id", 16949500], ["location_lat", "32.7845027778"], ["location_lng", "-96.7848138889"], ["zomato_address", "2639 Elm Street, Deep Ellum, Dallas, TX 75226"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75226"], ["zomato_cuisines", "Pizza"], ["zomato_user_rating", 3.2], ["zomato_rating_text", "Good"], ["zomato_rating_color", "9ACD32"], ["zomato_votes_count", 96], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "30"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/0/16949500/10b27bb303cb9da4c03853fde326ccd0_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.350872"], ["updated_at", "2016-04-16 18:09:49.350872"]]
+  [1m[36mScenario Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16949899 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Elbow Room"], ["zomato_restaurant_id", 16949899], ["location_lat", "32.7884055556"], ["location_lng", "-96.7832027778"], ["zomato_address", "3010 Gaston Avenue, Dallas, TX 75226"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75226"], ["zomato_cuisines", "American, Pizza"], ["zomato_user_rating", 4.2], ["zomato_rating_text", "Excellent"], ["zomato_rating_color", "3F7E00"], ["zomato_votes_count", 65], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "40"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/9/16949899/8d63c336eb825b3321f86cb034f0f9c8_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.355748"], ["updated_at", "2016-04-16 18:09:49.355748"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16958267 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Stonedeck Pizza Pub"], ["zomato_restaurant_id", 16958267], ["location_lat", "32.7843027778"], ["location_lng", "-96.7860638889"], ["zomato_address", "2613 Elm Street, Dallas, TX 75226"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75226"], ["zomato_cuisines", "Pizza"], ["zomato_user_rating", 3.1], ["zomato_rating_text", "Good"], ["zomato_rating_color", "9ACD32"], ["zomato_votes_count", 37], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "40"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/7/16958267/244fb0bae8e22e9a6bbaf04cd7271885_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.359903"], ["updated_at", "2016-04-16 18:09:49.359903"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16952379 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Cane Rosso"], ["zomato_restaurant_id", 16952379], ["location_lat", "32.7825500000"], ["location_lng", "-96.7856611111"], ["zomato_address", "2612 Commerce Street, Suite 101, Dallas, TX 75226"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75226"], ["zomato_cuisines", "Pizza, Italian"], ["zomato_user_rating", 3.6], ["zomato_rating_text", "Very Good"], ["zomato_rating_color", "5BA829"], ["zomato_votes_count", 452], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "45"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/chains/9/16952379/f26b2416f7be8a1906fcd655d44400cb_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.363005"], ["updated_at", "2016-04-16 18:09:49.363005"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16941602 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Divino's Pizzaria"], ["zomato_restaurant_id", 16941602], ["location_lat", "32.7950222222"], ["location_lng", "-96.7763277778"], ["zomato_address", "4201 Gaston Avenue, Suite 104, TX 75246"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75246"], ["zomato_cuisines", "Pizza, Italian"], ["zomato_user_rating", 3.8], ["zomato_rating_text", "Very Good"], ["zomato_rating_color", "5BA829"], ["zomato_votes_count", 97], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 1], ["zomato_average_cost_for_two", "25"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/2/16941602/08672ce3faaddc20c6cb828f7327218c_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.380590"], ["updated_at", "2016-04-16 18:09:49.380590"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 18289813 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Palmieri Cafe "], ["zomato_restaurant_id", 18289813], ["location_lat", "32.7775470000"], ["location_lng", "-96.7900370000"], ["zomato_address", "920 South Harwood Street, Suite 100, Dallas, TX 75201"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75201"], ["zomato_cuisines", "Coffee and Tea, Italian"], ["zomato_user_rating", 0.0], ["zomato_rating_text", "Not rated"], ["zomato_rating_color", "CBCBC8"], ["zomato_votes_count", 1], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 1], ["zomato_average_cost_for_two", "0"], ["zomato_thumb", "https://b.zmtcdn.com/images/res_avatar_120_1x_new.png"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.383505"], ["updated_at", "2016-04-16 18:09:49.383505"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16953327 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Three Sheets"], ["zomato_restaurant_id", 16953327], ["location_lat", "32.7938388889"], ["location_lng", "-96.7912972222"], ["zomato_address", "3113 Ross Avenue, Old East Dallas, Dallas, Dallas, TX 75204"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75204"], ["zomato_cuisines", "Burger, Pizza, Bar Food"], ["zomato_user_rating", 3.2], ["zomato_rating_text", "Good"], ["zomato_rating_color", "9ACD32"], ["zomato_votes_count", 33], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "65"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/7/16953327/919b14c864ee5d85d32b6163e8be9677_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.386866"], ["updated_at", "2016-04-16 18:09:49.386866"]]
+  [1m[36mScenario Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16952164 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Pizza Lounge"], ["zomato_restaurant_id", 16952164], ["location_lat", "32.7821416667"], ["location_lng", "-96.7665111111"], ["zomato_address", "841 Exposition Avenue, Dallas, TX 75226"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75226"], ["zomato_cuisines", "Pizza, Sandwich"], ["zomato_user_rating", 3.3], ["zomato_rating_text", "Good"], ["zomato_rating_color", "9ACD32"], ["zomato_votes_count", 100], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "45"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/4/16952164/b84f2705e34dd59dd8630d3290804601_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.405567"], ["updated_at", "2016-04-16 18:09:49.405567"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16940012 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Broadway Pizza"], ["zomato_restaurant_id", 16940012], ["location_lat", "32.7872146000"], ["location_lng", "-96.7957366000"], ["zomato_address", "Plaza Of The Americas, 700 N Pearl Street, Suite N104, Downtown, Dallas, TX 75201"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75201"], ["zomato_cuisines", "Italian, Pizza"], ["zomato_user_rating", 3.0], ["zomato_rating_text", "Average"], ["zomato_rating_color", "EDD614"], ["zomato_votes_count", 14], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 1], ["zomato_average_cost_for_two", "25"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/2/16940012/90d551641d65cb04680b5015485bb769_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.423950"], ["updated_at", "2016-04-16 18:09:49.423950"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16941663 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Domino's"], ["zomato_restaurant_id", 16941663], ["location_lat", "32.7963972222"], ["location_lng", "-96.7737194444"], ["zomato_address", "4420 Gaston Avenue, Dallas, TX 75246"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75246"], ["zomato_cuisines", "Fast Food, Pizza"], ["zomato_user_rating", 0.0], ["zomato_rating_text", "Not rated"], ["zomato_rating_color", "CBCBC8"], ["zomato_votes_count", 2], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 1], ["zomato_average_cost_for_two", "20"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/chains/9/16941629/c5e110bf8c5d9e371de7f9cf38afd80a_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.427457"], ["updated_at", "2016-04-16 18:09:49.427457"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16946181 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Pizza Inn"], ["zomato_restaurant_id", 16946181], ["location_lat", "32.7979500000"], ["location_lng", "-96.7777555556"], ["zomato_address", "4304 Live Oak Street, Dallas, TX 75204"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75204"], ["zomato_cuisines", "Pizza, Italian"], ["zomato_user_rating", 3.1], ["zomato_rating_text", "Good"], ["zomato_rating_color", "9ACD32"], ["zomato_votes_count", 12], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "35"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/1/16946181/39ccb9fd86c19e74186301551bddbd02_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.444342"], ["updated_at", "2016-04-16 18:09:49.444342"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 17830132 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Pizza Hut"], ["zomato_restaurant_id", 17830132], ["location_lat", "32.7824600000"], ["location_lng", "-96.7962040000"], ["zomato_address", "1700 Pacific Avenue, Dallas, TX 75201"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75201"], ["zomato_cuisines", "Fast Food, Pizza"], ["zomato_user_rating", 0.0], ["zomato_rating_text", "Not rated"], ["zomato_rating_color", "CBCBC8"], ["zomato_votes_count", 0], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 1], ["zomato_average_cost_for_two", "25"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/chains/5/16946095/0e455a589097c1f5b353f80b09ca31ae_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.448194"], ["updated_at", "2016-04-16 18:09:49.448194"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16952532 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Original Italian Cafe"], ["zomato_restaurant_id", 16952532], ["location_lat", "32.7845551000"], ["location_lng", "-96.7968410000"], ["zomato_address", "1919 Bryan Street, Suite 106, Downtown, Dallas, TX 75201"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75201"], ["zomato_cuisines", "Italian, Pizza"], ["zomato_user_rating", 3.4], ["zomato_rating_text", "Good"], ["zomato_rating_color", "9ACD32"], ["zomato_votes_count", 37], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "30"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/2/16952532/ba0b061df070292e900903ca7ec0b188_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.465650"], ["updated_at", "2016-04-16 18:09:49.465650"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16951213 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Bryan Street Tavern"], ["zomato_restaurant_id", 16951213], ["location_lat", "32.7995305556"], ["location_lng", "-96.7790916667"], ["zomato_address", "4315 Bryan Street, Dallas, TX 75204"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75204"], ["zomato_cuisines", "American, Pizza, Pub Food"], ["zomato_user_rating", 3.9], ["zomato_rating_text", "Very Good"], ["zomato_rating_color", "5BA829"], ["zomato_votes_count", 95], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "40"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/3/16951213/72d69c513a32c93276262db7911eb3cf_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.470857"], ["updated_at", "2016-04-16 18:09:49.470857"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16946331 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Porta di Roma"], ["zomato_restaurant_id", 16946331], ["location_lat", "32.7812356000"], ["location_lng", "-96.7975281000"], ["zomato_address", "1623 Main Street, Dallas, TX 75201"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75201"], ["zomato_cuisines", "Italian"], ["zomato_user_rating", 3.3], ["zomato_rating_text", "Good"], ["zomato_rating_color", "9ACD32"], ["zomato_votes_count", 249], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "60"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/1/16946331/f9852cbc2e09ef6f402368c21813a340_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.483133"], ["updated_at", "2016-04-16 18:09:49.483133"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 16940446 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Carmine's Pizzeria"], ["zomato_restaurant_id", 16940446], ["location_lat", "32.7862750000"], ["location_lng", "-96.7982166667"], ["zomato_address", "2006 San Jacinto Street, Suite 735, Dallas, TX 75201"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", "75201"], ["zomato_cuisines", "Pizza"], ["zomato_user_rating", 3.7], ["zomato_rating_text", "Very Good"], ["zomato_rating_color", "5BA829"], ["zomato_votes_count", 132], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "35"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/6/16940446/dcd70b643b7971c2c491d1f3491b20d4_res_featured_thumb.jpg"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.486521"], ["updated_at", "2016-04-16 18:09:49.486521"]]
+  [1m[36mScenario Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" = 17949781 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "scenarios" ("business_name", "zomato_restaurant_id", "location_lat", "location_lng", "zomato_address", "zomato_loc_city_id", "zomato_loc_city", "zomato_postal_code", "zomato_cuisines", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_has_online_delivery", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "email", "primary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["business_name", "Very Individual Pizza"], ["zomato_restaurant_id", 17949781], ["location_lat", "32.7809376000"], ["location_lng", "-96.7984891000"], ["zomato_address", "Downtown, Dallas, TX"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["zomato_postal_code", ""], ["zomato_cuisines", "Pizza"], ["zomato_user_rating", 0.0], ["zomato_rating_text", "Not rated"], ["zomato_rating_color", "CBCBC8"], ["zomato_votes_count", 0], ["zomato_has_online_delivery", "f"], ["zomato_price_range", 1], ["zomato_average_cost_for_two", "20"], ["zomato_thumb", "https://b.zmtcdn.com/images/res_avatar_120_1x_new.png"], ["email", "dummy@dummy.com"], ["primary", "f"], ["created_at", "2016-04-16 18:09:49.494520"], ["updated_at", "2016-04-16 18:09:49.494520"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "reviews" ("review_rating", "review_text", "rating_color", "rating_text", "likes", "author_name", "author_foodie_level", "user_image", "comments_count", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["review_rating", 3.5], ["review_text", "I tried the mushroom and meatball over angle hair pasta. It was spicy but good and the service was good too. Now it was a Thursday night and there was very few patrons in the house. For the price it was a good deal and since we had spent the last three weeks eating Baylor Hospital fair while watching over a family member in the ICU the sparse decor was somewhat comforting."], ["rating_color", "9ACD32"], ["rating_text", "Good Enough"], ["likes", 0], ["author_name", "David"], ["author_foodie_level", "Foodie"], ["user_image", "https://b.zmtcdn.com/images/zavatar_200_1x.png"], ["comments_count", 0], ["restaurant_id", "16944525"], ["created_at", "2016-04-16 18:09:50.466274"], ["updated_at", "2016-04-16 18:09:50.466274"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "mushroom"], ["entity_type", "[\"/food/ingredient\", \"/biology/organism_classification\", \"/food/food\"]"], ["review_id", 1], ["property", ""], ["created_at", "2016-04-16 18:09:51.554384"], ["updated_at", "2016-04-16 18:09:51.554384"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 1]]
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 1]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["entity", "meatball"], ["entity_type", "[\"/food/food\", \"/food/dish\"]"], ["review_id", 1], ["property", ""], ["created_at", "2016-04-16 18:09:51.562114"], ["updated_at", "2016-04-16 18:09:51.562114"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 1]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "pasta"], ["entity_type", "[\"/food/ingredient\", \"/food/food\", \"/business/consumer_product\", \"/book/book_subject\"]"], ["review_id", 1], ["property", ""], ["created_at", "2016-04-16 18:09:51.566398"], ["updated_at", "2016-04-16 18:09:51.566398"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("review_rating", "review_text", "rating_color", "rating_text", "likes", "author_name", "author_foodie_level", "user_image", "comments_count", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["review_rating", 4.0], ["review_text", "Ordered some Togo food tonight! Great choice. I enjoyed the chicken Marsala with the garlic knot bread and my husband loves the BBQ chicken pizza! Don't let the character of the exterior scare you out of trying! The best spots are usually the whole in the walls :)"], ["rating_color", "5BA829"], ["rating_text", "Great!"], ["likes", 1], ["author_name", "Allison Beard"], ["author_foodie_level", "Super Foodie"], ["user_image", "https://p1.zmtcdn.com/image/data/user_profile_pictures/fb9/2ac0549c0d31011197e11594210f4fb9_100_thumb.jpg"], ["comments_count", 0], ["restaurant_id", "16944525"], ["created_at", "2016-04-16 18:09:51.569404"], ["updated_at", "2016-04-16 18:09:51.569404"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 2]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["entity", "chicken"], ["entity_type", "[\"/food/food\", \"/biology/organism_part\", \"/food/ingredient\"]"], ["review_id", 2], ["property", ""], ["created_at", "2016-04-16 18:09:52.009618"], ["updated_at", "2016-04-16 18:09:52.009618"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 2]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "entities" WHERE "entities"."id" = ?[0m  [["id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["entity", "chicken Marsala"], ["entity_type", "[\"/food/dish\", \"/food/food\"]"], ["review_id", 2], ["property", ""], ["created_at", "2016-04-16 18:09:52.014979"], ["updated_at", "2016-04-16 18:09:52.014979"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 2]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "garlic"], ["entity_type", "[\"/food/ingredient\", \"/medicine/drug_ingredient\", \"/biology/organism_classification\", \"/food/food\"]"], ["review_id", 2], ["property", ""], ["created_at", "2016-04-16 18:09:52.018245"], ["updated_at", "2016-04-16 18:09:52.018245"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 2]]
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 2]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["entity", "bread"], ["entity_type", "[\"/visual_art/art_subject\", \"/food/ingredient\", \"/food/food\", \"/book/book_subject\", \"/film/film_subject\"]"], ["review_id", 2], ["property", ""], ["created_at", "2016-04-16 18:09:52.023249"], ["updated_at", "2016-04-16 18:09:52.023249"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 2]]
+  [1m[35mEntity Load (0.0ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "pizza"], ["entity_type", "[\"/food/dish\", \"/dining/cuisine\", \"/book/book_subject\", \"/food/food\"]"], ["review_id", 2], ["property", ""], ["created_at", "2016-04-16 18:09:52.034855"], ["updated_at", "2016-04-16 18:09:52.034855"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("review_rating", "review_text", "rating_color", "rating_text", "likes", "author_name", "author_foodie_level", "user_image", "comments_count", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["review_rating", 0.0], ["review_text", "Good choice for Italian in the area. Super fresh, delicious but minimalistic, just as an authentic italian meal would be. Would recommend the chicken pesto and traditional breadsticks, but be forewarned, portions are small. \r \r To say that the interior is homey would be pushing it, but the staff make it an inviting, relaxing place to eat. And since Elm St. is (usually) fairly quiet, the patio was a nice place to have a couple drinks.\r \r Parking is easy on metered street spots or in adjacent (aba..."], ["rating_color", "CBCBC8"], ["rating_text", "Not rated"], ["likes", 0], ["author_name", "Jacque O"], ["author_foodie_level", "Super Foodie"], ["user_image", "https://p1.zmtcdn.com/image/data/user_profile_pictures/6a1/8b1e07d46f6b7fec5f107982735c66a1_100_thumb.jpg"], ["comments_count", 0], ["restaurant_id", "16944525"], ["created_at", "2016-04-16 18:09:52.037059"], ["updated_at", "2016-04-16 18:09:52.037059"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 3]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["entity", "Italian"], ["entity_type", "[\"/periodicals/newspaper_circulation_area\", \"/organization/organization_member\", \"/location/dated_location\", \"/military/military_combatant\", \"/law/court_jurisdiction_area\", \"/location/country\", \"/sports/sports_team_location\", \"/sports/sport_country\", \"/exhibitions/exhibition_subject\", \"/organization/organization_scope\", \"/symbols/name_source\", \"/symbols/flag_referent\", \"/government/governmental_jurisdiction\", \"/location/administrative_division\", \"/travel/travel_destination\", \"/organization/organization_founder\", \"/meteorology/forecast_zone\", \"/fictional_universe/fictional_setting\", \"/location/region\", \"/media_common/netflix_genre\", \"/location/statistical_region\", \"/book/book_subject\", \"/olympics/olympic_participating_country\", \"/film/film_location\", \"/exhibitions/exhibition_venue\", \"/biology/breed_origin\", \"/business/business_location\", \"/food/beer_country_region\", \"/business/employer\", \"/location/location\"]"], ["review_id", 3], ["property", ""], ["created_at", "2016-04-16 18:09:52.514796"], ["updated_at", "2016-04-16 18:09:52.514796"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 3]]
+  [1m[35mEntity Load (0.0ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "italian"], ["entity_type", "[\"/periodicals/newspaper_circulation_area\", \"/organization/organization_member\", \"/location/dated_location\", \"/military/military_combatant\", \"/law/court_jurisdiction_area\", \"/location/country\", \"/sports/sports_team_location\", \"/sports/sport_country\", \"/exhibitions/exhibition_subject\", \"/organization/organization_scope\", \"/symbols/name_source\", \"/symbols/flag_referent\", \"/government/governmental_jurisdiction\", \"/location/administrative_division\", \"/travel/travel_destination\", \"/organization/organization_founder\", \"/meteorology/forecast_zone\", \"/fictional_universe/fictional_setting\", \"/location/region\", \"/media_common/netflix_genre\", \"/location/statistical_region\", \"/book/book_subject\", \"/olympics/olympic_participating_country\", \"/film/film_location\", \"/exhibitions/exhibition_venue\", \"/biology/breed_origin\", \"/business/business_location\", \"/food/beer_country_region\", \"/business/employer\", \"/location/location\"]"], ["review_id", 3], ["property", ""], ["created_at", "2016-04-16 18:09:52.517405"], ["updated_at", "2016-04-16 18:09:52.517405"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 3]]
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 3]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["entity", "pesto"], ["entity_type", "[\"/food/food\", \"/food/dish\"]"], ["review_id", 3], ["property", ""], ["created_at", "2016-04-16 18:09:52.521817"], ["updated_at", "2016-04-16 18:09:52.521817"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", " traditional"], ["review_id", 3]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["entity", "breadsticks"], ["entity_type", "[\"/food/dish\", \"/food/food\"]"], ["review_id", 3], ["property", " traditional"], ["created_at", "2016-04-16 18:09:52.524878"], ["updated_at", "2016-04-16 18:09:52.524878"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "reviews" ("review_rating", "review_text", "rating_color", "rating_text", "likes", "author_name", "author_foodie_level", "user_image", "comments_count", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["review_rating", 0.0], ["review_text", "To the infamous negative reviewer:. To the horrible advertising world woman who trashed this place: go back to hell where you belong.\r \r There are people in our city who need a late night delivery and dine-in Italian option that is decent and fairly priced. Mama Mia is that. Here's what you wrote:\r \r \"Definitely the worst meatsauce I've every had. The \"meat\" was frozen pellets of pizza topping. The \"sauce\" was definitely not homemade, but rather a generic canned sauce. My dish looked like a plat..."], ["rating_color", "CBCBC8"], ["rating_text", "Not rated"], ["likes", 0], ["author_name", "Facebook User"], ["author_foodie_level", "Foodie"], ["user_image", "https://p1.zmtcdn.com/image/data/user_profile_pictures/2d8/8124e765df70d99d524235b06b1e02d8_100_thumb.jpg"], ["comments_count", 0], ["restaurant_id", "16944525"], ["created_at", "2016-04-16 18:09:52.527452"], ["updated_at", "2016-04-16 18:09:52.527452"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "Italian"], ["entity_type", "[\"/periodicals/newspaper_circulation_area\", \"/organization/organization_member\", \"/location/dated_location\", \"/military/military_combatant\", \"/law/court_jurisdiction_area\", \"/location/country\", \"/sports/sports_team_location\", \"/sports/sport_country\", \"/exhibitions/exhibition_subject\", \"/organization/organization_scope\", \"/symbols/name_source\", \"/symbols/flag_referent\", \"/government/governmental_jurisdiction\", \"/location/administrative_division\", \"/travel/travel_destination\", \"/organization/organization_founder\", \"/meteorology/forecast_zone\", \"/fictional_universe/fictional_setting\", \"/location/region\", \"/media_common/netflix_genre\", \"/location/statistical_region\", \"/book/book_subject\", \"/olympics/olympic_participating_country\", \"/film/film_location\", \"/exhibitions/exhibition_venue\", \"/biology/breed_origin\", \"/business/business_location\", \"/food/beer_country_region\", \"/business/employer\", \"/location/location\"]"], ["review_id", 4], ["property", ""], ["created_at", "2016-04-16 18:09:53.054147"], ["updated_at", "2016-04-16 18:09:53.054147"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", " worst"], ["review_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "meatsauce"], ["entity_type", "[\"/food/type_of_dish\"]"], ["review_id", 4], ["property", " worst"], ["created_at", "2016-04-16 18:09:53.056925"], ["updated_at", "2016-04-16 18:09:53.056925"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 4]]
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 4]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["entity", "meat"], ["entity_type", "[\"/food/food\", \"/food/ingredient\", \"/book/book_subject\"]"], ["review_id", 4], ["property", ""], ["created_at", "2016-04-16 18:09:53.060918"], ["updated_at", "2016-04-16 18:09:53.060918"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 4]]
+  [1m[35mEntity Load (0.1ms)[0m  SELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "pizza"], ["entity_type", "[\"/food/dish\", \"/dining/cuisine\", \"/book/book_subject\", \"/food/food\"]"], ["review_id", 4], ["property", ""], ["created_at", "2016-04-16 18:09:53.064923"], ["updated_at", "2016-04-16 18:09:53.064923"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", ""], ["review_id", 4]]
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT "entities".* FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?[0m  [["property", ""], ["review_id", 4]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "entities" WHERE "entities"."id" = ?  [["id", 16]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "pizza topping"], ["entity_type", "[\"/food/dish\", \"/dining/cuisine\", \"/book/book_subject\", \"/food/food\"]"], ["review_id", 4], ["property", ""], ["created_at", "2016-04-16 18:09:53.068573"], ["updated_at", "2016-04-16 18:09:53.068573"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", " was definitely not homemade but rather a generic canned sauce"], ["review_id", 4]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "sauce"], ["entity_type", "[\"/food/type_of_dish\"]"], ["review_id", 4], ["property", " was definitely not homemade but rather a generic canned sauce"], ["created_at", "2016-04-16 18:09:53.072104"], ["updated_at", "2016-04-16 18:09:53.072104"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entities" WHERE "entities"."property" = ? AND "entities"."review_id" = ?  [["property", " generic canned"], ["review_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entities" ("entity", "entity_type", "review_id", "property", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["entity", "sauce"], ["entity_type", "[\"/food/type_of_dish\"]"], ["review_id", 4], ["property", " generic canned"], ["created_at", "2016-04-16 18:09:53.078065"], ["updated_at", "2016-04-16 18:09:53.078065"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "reviews" ("review_rating", "review_text", "rating_color", "rating_text", "likes", "author_name", "author_foodie_level", "user_image", "comments_count", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["review_rating", 0.0], ["review_text", "I really like this place, after reading some posted reviews, realistic expectations would do reader justice .\r \r Realistic expectations – this place is a dive, the food taste great, and the price is fair. I Prefer this place over Campisi’s."], ["rating_color", "CBCBC8"], ["rating_text", "Not rated"], ["likes", 0], ["author_name", "R320l"], ["author_foodie_level", "Foodie"], ["user_image", "https://b.zmtcdn.com/images/zavatar_200_1x.png"], ["comments_count", 0], ["restaurant_id", "16944525"], ["created_at", "2016-04-16 18:09:53.079758"], ["updated_at", "2016-04-16 18:09:53.079758"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scenarios" ("business_name", "email", "location_lat", "location_lng", "zomato_postal_code", "zomato_restaurant_id", "zomato_address", "zomato_cuisines", "zomato_has_online_delivery", "zomato_user_rating", "zomato_rating_text", "zomato_rating_color", "zomato_votes_count", "zomato_price_range", "zomato_average_cost_for_two", "zomato_thumb", "zomato_loc_city_id", "zomato_loc_city", "primary", "fips_block_type", "fips_state", "fips_county", "fips_tract", "nearest_zip", "nearest_zip_coords", "closer_zips", "closer_zips_coords", "nearby_restaurants", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["business_name", "Mama Mia Pizza & Pasta"], ["email", "manideep@msn.com"], ["location_lat", "32.785194"], ["location_lng", "-96.780992"], ["zomato_postal_code", "75226"], ["zomato_restaurant_id", 16944525], ["zomato_address", "2935 Elm Street, Dallas, TX 75226"], ["zomato_cuisines", "Italian, Pizza"], ["zomato_has_online_delivery", "f"], ["zomato_user_rating", 4.2], ["zomato_rating_text", "Excellent"], ["zomato_rating_color", "3F7E00"], ["zomato_votes_count", 407], ["zomato_price_range", 2], ["zomato_average_cost_for_two", "30"], ["zomato_thumb", "https://b.zmtcdn.com/data/pictures/5/16944525/0911190c70e78de16adca01bfe933f95_res_featured_thumb.jpg"], ["zomato_loc_city_id", 276], ["zomato_loc_city", "Dallas"], ["primary", "t"], ["fips_block_type", "BLOCK2010"], ["fips_state", "81"], ["fips_county", "113"], ["fips_tract", "020400"], ["nearest_zip", "75205"], ["nearest_zip_coords", "32.832584,-96.797592"], ["closer_zips", "[\"75203\", \"75215\", \"75210\", \"75202\", \"75270\", \"75201\", \"75207\", \"75221\", \"75222\", \"75250\", \"75242\", \"75260\", \"75262\", \"75263\", \"75266\", \"75264\", \"75265\", \"75267\", \"75275\", \"75277\", \"75303\", \"75285\", \"75301\", \"75313\", \"75312\", \"75315\", \"75320\", \"75359\", \"75360\", \"75371\", \"75372\", \"75373\", \"75389\", \"75393\", \"75394\", \"75392\", \"75397\", \"75398\", \"75223\", \"75246\", \"75219\", \"75204\", \"75206\", \"75214\", \"75205\"]"], ["closer_zips_coords", "[\"32.7432998,-96.78687939999999\", \"32.7556954,-96.76545949999999\", \"32.765421,-96.7413706\", \"32.7774686,-96.8042882\", \"32.7814576,-96.80194449999999\", \"32.7863301,-96.79625279999999\", \"32.7891591,-96.82170169999999\", \"32.7832531,-96.7982311\", \"32.78,-96.8\", \"32.783287,-96.79826949999999\", \"32.7790841,-96.8028234\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.84,-96.78\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.7738901,-96.7692345\", \"32.78,-96.8\", \"32.802955,-96.7701804\", \"32.8172446,-96.7712123\", \"32.7919419,-96.7736585\", \"32.8172446,-96.7712123\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.78,-96.8\", \"32.7905558,-96.7440467\", \"32.7962048,-96.7694752\", \"32.8122051,-96.81098519999999\", \"32.799475,-96.78687939999999\", \"32.8225166,-96.77616859999999\", \"32.824251,-96.7440467\", \"32.832584,-96.797592\"]"], ["nearby_restaurants", "[\"16953545\", \"16947626\", \"16949500\", \"16949899\", \"16958267\", \"16952379\", \"16941602\", \"18289813\", \"16953327\", \"16952164\", \"16940012\", \"16941663\", \"16946181\", \"17830132\", \"16952532\", \"16951213\", \"16946331\", \"16940446\", \"17949781\"]"], ["created_at", "2016-04-16 18:09:53.520669"], ["updated_at", "2016-04-16 18:09:53.520669"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/scenarios/20
+Completed 302 Found in 30609ms (ActiveRecord: 20.8ms)
+
+
+Started GET "/scenarios/20" for ::1 at 2016-04-16 13:09:53 -0500
+Processing by ScenariosController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mScenario Load (0.7ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios" WHERE "scenarios"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = ?  [["restaurant_id", "16944525"]]
+  Rendered scenarios/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 115ms (Views: 101.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assessor" for ::1 at 2016-04-16 13:10:01 -0500
+Processing by AssessorController#home as HTML
+  [1m[36mScenario Load (0.4ms)[0m  [1mSELECT  "scenarios".* FROM "scenarios" WHERE "scenarios"."primary" = ?  ORDER BY "scenarios"."id" DESC LIMIT 1[0m  [["primary", "t"]]
+  [1m[35mScenario Load (0.2ms)[0m  SELECT  "scenarios".* FROM "scenarios" WHERE "scenarios"."id" = ? LIMIT 1  [["id", 20]]
+  [1m[36mScenario Load (0.7ms)[0m  [1mSELECT "scenarios".* FROM "scenarios" WHERE "scenarios"."zomato_restaurant_id" IN (16953545, 16947626, 16949500, 16949899, 16958267, 16952379, 16941602, 18289813, 16953327, 16952164, 16940012, 16941663, 16946181, 17830132, 16952532, 16951213, 16946331, 16940446, 17949781)[0m
+  Rendered assessor/home.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 152ms (Views: 146.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/sample" for ::1 at 2016-04-16 13:10:06 -0500
+Processing by AssessorController#sample as HTML
+  [1m[35mScenario Load (0.1ms)[0m  SELECT  "scenarios".* FROM "scenarios" WHERE "scenarios"."primary" = ?  ORDER BY "scenarios"."id" DESC LIMIT 1  [["primary", "t"]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews"."id" FROM "reviews" WHERE "reviews"."restaurant_id" = ?[0m  [["restaurant_id", "16944525"]]
+  [1m[35mEntity Load (0.4ms)[0m  SELECT "entities".* FROM "entities" WHERE ("entities"."property" != ?) AND "entities"."review_id" IN (1, 2, 3, 4, 5)  [["property", ""]]
+  Rendered assessor/sample.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 199ms (Views: 194.6ms | ActiveRecord: 0.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeleteEmotionAndSentiment (20160416181453)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeleteEmotionAndSentiment (20160416181453)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (8.5ms)[0m  [1mDROP TABLE "sentiments"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "entities" ADD "sentiment" varchar
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "entities" ADD "sentiment_type" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160416181453"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_emotions_on_review_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_emotions_on_review_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entities_on_review_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entities_on_review_id' AND type='index'
+

@@ -36,7 +36,7 @@ class AssessorController < ApplicationController
     #   end
     # end
 
-    @reviews = Review.select('id').where(restaurant_id: 16948344).all.as_json
+    @reviews = Review.select('id').where(restaurant_id: Scenario.where(primary: true).last.zomato_restaurant_id).all.as_json
     arr = []
     @reviews.each do |item| arr.push item['id'] end
     @reviews = arr
