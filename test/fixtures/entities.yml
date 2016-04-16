@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entity: MyString
+  entity_type: MyString
+  review_id: 
+
+two:
+  entity: MyString
+  entity_type: MyString
+  review_id: 

@@ -1,0 +1,65 @@
+<% if !notice.nil?  %>
+<p id="notice" class="alert alert-success text-center" role="alert"><%= notice %></p>
+<% end %>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="ibox">
+      <h1> <%= @scenario.business_name %></h1><br>
+
+      <div class="mg-left-5">
+        <p>
+          <strong>Email</strong><br>
+          <%= @scenario.email %>
+        </p>
+
+        <p>
+          <strong>Address</strong><br>
+          <%= @scenario.zomato_address %>
+        </p>
+
+        <p>
+          <strong>Cuisines</strong><br>
+          <%= @scenario.zomato_cuisines %>
+        </p>
+
+        <p>
+          <strong>Online delivery</strong><br>
+          <%= @scenario.zomato_has_online_delivery %>
+        </p>
+
+        <p>
+          <strong>Zomato user rating</strong><br>
+          <%= @scenario.zomato_user_rating %>
+        </p>
+
+        <p>
+          <strong>Zomato rating</strong><br>
+          <%= @scenario.zomato_rating_text %>
+        </p>
+
+        <p id="loc_lat" hidden><%= @scenario.location_lat %></p>
+        <p id="loc_lng" hidden><%= @scenario.location_lng %></p>
+
+        <%= link_to 'Back', scenarios_path, class: 'btn btn-primary float-right' %>
+        <%= link_to 'Edit', edit_scenario_path(@scenario), class: 'btn btn-success float-right mg-right-10' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="google-map-small-container mg-bottom-20 mg-top-20">
+      <div id="google-map"></div>
+    </div>
+    <!-- -->
+    <% @reviews.each do |review| %>
+        <div class="list-group">
+          <%= link_to '', class: 'list-group-item' do %>
+              <muted class="float-right">by <%= review.author_name + ' - ' + review.author_foodie_level %></muted>
+              <h4 class="list-group-item-heading pd-bottom-5 u-border"><%= review.rating_text %><small> / <%= review.review_rating %></small></h4>
+              <p><%= review.review_text %></p>
+          <% end %>
+        </div>
+    <% end %>
+    <!-- -->
+  </div>
+</div>

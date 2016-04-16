@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  emotion_type: MyString
+  score: MyString
+  review_id: 
+
+two:
+  emotion_type: MyString
+  score: MyString
+  review_id: 

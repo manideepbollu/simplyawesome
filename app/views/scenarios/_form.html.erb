@@ -1,0 +1,63 @@
+<%= form_for @scenario, validate: true, html: {id: 'scenario-form'} do |f| %>
+    <% if @scenario.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@scenario.errors.count, "error") %> prohibited this scenario from being saved:</h2>
+
+          <ul>
+            <% @scenario.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.label :business_name %>
+    <div class="field">
+      <%= f.text_field :business_name, class: 'form-control' %>
+    </div>
+    <%= f.label :email %>
+    <div class="field">
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+    <%= f.label :location_lat %>
+    <div class="field">
+      <%= f.text_field :location_lat, class: 'form-control', readonly: 'readonly' %>
+    </div>
+    <%= f.label :location_lng %>
+    <div class="field">
+      <%= f.text_field :location_lng, class: 'form-control', readonly: 'readonly' %>
+    </div>
+    <%= f.label :zomato_restaurant_id %>
+    <div class="field">
+      <%= f.number_field :zomato_restaurant_id, class: 'form-control', readonly: 'readonly' %>
+    </div>
+    <%= f.label :zomato_address %>
+    <div class="field">
+      <%= f.text_area :zomato_address, class: 'form-control', readonly: 'readonly' %>
+    </div>
+    <%= f.label :zomato_cuisines %>
+    <div class="field">
+      <%= f.text_field :zomato_cuisines, class: 'form-control', readonly: 'readonly' %>
+    </div>
+    <%= f.label :zomato_user_rating %>
+    <div class="field">
+      <%= f.text_field :zomato_user_rating, class: 'form-control', readonly: 'readonly' %>
+    </div><br>
+    <!-- Hidden Fields -->
+    <%= f.hidden_field :zomato_postal_code %>
+    <%= f.hidden_field :zomato_loc_city_id %>
+    <%= f.hidden_field :zomato_loc_city %>
+    <%= f.hidden_field :zomato_rating_text %>
+    <%= f.hidden_field :zomato_rating_color %>
+    <%= f.hidden_field :zomato_votes_count %>
+    <%= f.hidden_field :zomato_has_online_delivery %>
+    <%= f.hidden_field :zomato_price_range %>
+    <%= f.hidden_field :zomato_average_cost_for_two %>
+    <%= f.hidden_field :zomato_thumb %>
+    <!-- end of hidden fields -->
+    <%= link_to 'Back', scenarios_path, class: 'btn btn-primary float-right' %>
+    <div class="actions">
+      <%= f.submit @scenario.new_record? ? 'Create' : 'Update', class: 'btn btn-success float-right mg-right-10' %>
+    </div>
+<% end %>
+
