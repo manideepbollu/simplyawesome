@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration
       t.text :review_text
       t.string :rating_color
       t.string :rating_text
-      t.timestamp :review_time_stamp
+      t.integer :review_time_stamp
       t.integer :likes
       t.string :author_name
       t.string :author_foodie_level
