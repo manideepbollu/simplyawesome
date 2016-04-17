@@ -43,12 +43,6 @@ class AssessorController < ApplicationController
     @pop_entities[:indian] = (@pop_stats[:indians]*100)/@pop_stats[:total]
     @pop_entities[:chinese] = (@pop_stats[:chinese]*100)/@pop_stats[:total]
 
-    # Good and bad analysis
-    arr = @scenario.get_good_bad_analysis
-    @other_good = arr[0]
-    @other_bad = arr[1]
-    @good = arr[2]
-    @bad = arr[3]
   end
 
   # GET /sample.json
