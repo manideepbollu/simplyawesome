@@ -296,33 +296,9 @@ class Scenario < ActiveRecord::Base
     arr = []
     reviews.each do |review| arr.push review['id'] end
     reviews = arr
-    positive_entities = Entity.where(review_id: reviews).where(sentiment_type: 'positive').sum(:sentiment)
-    negative_entities = Entity.where(review_id: reviews).where(sentiment_type: 'negative').sum(:sentiment)
+    positive_entities = Entity.where(review_id: reviews).where(sentiment_type: 'positive').count
+    negative_entities = Entity.where(review_id: reviews).where(sentiment_type: 'negative').count
     (positive_entities.to_f - negative_entities.to_f).round
-  end
-
-  def get_good_bad_analysis
-    reviews = Review.select('id').where(restaurant_id: self.zomato_restaurant_id).all.as_json
-    arr = []
-    reviews.each do |review| arr.push review['id'] end
-    reviews = arr
-    positive_entities = Entity.where(review_id: reviews).where(sentiment_type: 'positive').all.as_json
-    negative_entities = Entity.where(review_id: reviews).where(sentiment_type: 'negative').all.as_json
-    arr = []
-    positive_entities.each do |entity| arr.push entity['entity'] end
-    positive_entities = arr
-    arr = []
-    negative_entities.each do |entity| arr.push entity['entity'] end
-    negative_entities = arr
-    other_p_entities = Entity.where(entity: positive_entities).all
-    other_n_entities = Entity.where(entity: positive_entities).all
-    result = []
-    result.push other_p_entities
-    result.push other_n_entities
-    result.push positive_entities
-    result.push negative_entities
-    result
-
   end
 
   validates :business_name, presence: true, length: { maximum: 100 }
