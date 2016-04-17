@@ -8,6 +8,93 @@ body {
   color: #555;
 }
 
+/*
+  Flaticon icon fonts: Flaticon
+  Creation date: 17/04/2016 14:22
+  */
+
+@font-face {
+  font-family: "Flaticon";
+  src: font-url("Flaticon.eot");
+  src: font-url("Flaticon.eot?#iefix") format("embedded-opentype"),
+  font-url("Flaticon.woff") format("woff"),
+  font-url("Flaticon.ttf") format("truetype"),
+  font-url("Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: font-url("Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-size: 4em;
+  font-style: normal;
+}
+
+div.glyph {
+  float: left;
+  width: 110px;
+  padding: 0;
+  margin: 25px 10px;
+}
+
+.jumbotron {
+  padding-bottom: 20px !important;
+}
+
+.activity-icons {
+  margin: 0 5px !important;
+  width: 105px !important;
+  font-size: 0.8em !important;
+  h4 {
+    margin-top: -5px;
+  }
+}
+
+.activity-container {
+  border: 1px solid #006611;
+  border-radius: 5px;
+  background-color: #efefef;
+  color: #666;
+  overflow: hidden;
+  margin:  0 0 10px 0;
+  padding-bottom: 10px;
+}
+
+.favorite-pop {
+  border: 1px solid #006611;
+  border-radius: 5px;
+  background-color: #efefef;
+}
+
+.flaticon-black:before { content: "\f100"; }
+.flaticon-black-1:before { content: "\f101"; }
+.flaticon-favorite:before { content: "\f102"; }
+.flaticon-human:before { content: "\f103"; }
+.flaticon-man:before { content: "\f104"; }
+.flaticon-people:before { content: "\f105"; }
+.flaticon-people-1:before { content: "\f106"; }
+.flaticon-people-2:before { content: "\f107"; }
+.flaticon-people-3:before { content: "\f108"; }
+.flaticon-shape:before { content: "\f109"; }
+.flaticon-shapes:before { content: "\f10a"; }
+.flaticon-signs:before { content: "\f10b"; }
+.flaticon-sky:before { content: "\f10c"; }
+.flaticon-social:before { content: "\f10d"; }
+
+/* Icons ended */
+
+.pop-stats-icons {
+  padding: 0 !important;
+}
+
 h1 {
   font-size: 2.5em;
 }

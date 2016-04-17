@@ -32,10 +32,29 @@ class AssessorController < ApplicationController
 
     #Food Quality
     @food_quality = @scenario.get_food_quality
+
+    #Pop Stats
+    @pop_stats = @scenario.get_pop_stats
+    @pop_entities = {}
+    @pop_entities[:white] = (@pop_stats[:whites]*100)/@pop_stats[:total]
+    @pop_entities[:black] = (@pop_stats[:blacks]*100)/@pop_stats[:total]
+    @pop_entities[:hispanic] = (@pop_stats[:hispanics]*100)/@pop_stats[:total]
+    @pop_entities[:natives] = (@pop_stats[:american_natives]*100)/@pop_stats[:total]
+    @pop_entities[:indian] = (@pop_stats[:indians]*100)/@pop_stats[:total]
+    @pop_entities[:chinese] = (@pop_stats[:chinese]*100)/@pop_stats[:total]
+
+    # Good and bad analysis
+    arr = @scenario.get_good_bad_analysis
+    @other_good = arr[0]
+    @other_bad = arr[1]
+    @good = arr[2]
+    @bad = arr[3]
   end
 
   # GET /sample.json
   def sample
+    # @pop = Scenario.where(primary: true).first.get_pop_stats
+
     # response = RestClient.post 'https://api.textrazor.com', {'extractors' => 'entities,words,relations,senses', 'text' => "This place isn't good. Very small spread populated by underwhelming dishes. The naan was dry and thin--perhaps it had been hanging out with some local tortillas and picked up some bad habbits. The saag paneer was mediocre and the tandoori chicken was dry as a bone. All the dishes were run of the mill. Now for the interesting part! Somebody elses dishes and glass (complete with a straw that neither I or my companion never use) magically appeared on our table between trips to the buffet. I subsequently lost my appetite upon discovering an extra fork and realizing I may have not used my own! My partner's jacket was still at the table so we know we weren't sitting at the wrong table. Management was nice enough to replace my silverware and drink, but given the subpar food and my experience, I'll never go back."}, {'x-textrazor-key' => '0d6ca499a870c7b9e3b81b4933d8634a4c849fd01b41bfaee29f0b4f'}
     # response = JSON.parse response
 

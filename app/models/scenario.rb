@@ -58,7 +58,7 @@ class Scenario < ActiveRecord::Base
     if response.code == 200
       response = JSON.parse(response)
       self.fips_block_type = response['Results']['block'][0]['geographyType']
-      self.fips_state = response['Results']['block'][0]['FIPS'][1..2]
+      self.fips_state = response['Results']['block'][0]['FIPS'][0..1]
       self.fips_county = response['Results']['block'][0]['FIPS'][2..4]
       self.fips_tract = response['Results']['block'][0]['FIPS'][5..10]
       true
@@ -246,6 +246,83 @@ class Scenario < ActiveRecord::Base
       end
     end
     ratings
+  end
+
+  def get_pop_stats
+
+    neighbor_pops = RestClient.get "http://api.census.gov/data/2015/pdb/tract?get=County_name,State_name,NH_White_alone_CEN_2010,NH_Blk_alone_CEN_2010,Hispanic_CEN_2010,NH_AIAN_alone_CEN_2010,NH_Asian_alone_CEN_2010,Age5p_Hindi_ACSMOE_09_13,Age5p_Chinese_ACS_09_13,Males_CEN_2010,Females_CEN_2010,Tot_Population_CEN_2010&for=tract:*&in=state:#{self.fips_state}+county:#{self.fips_county}"
+    neighbor_pops = JSON.parse neighbor_pops
+
+    self_pops = RestClient.get "http://api.census.gov/data/2015/pdb/tract?get=County_name,State_name,NH_White_alone_CEN_2010,NH_Blk_alone_CEN_2010,Hispanic_CEN_2010,NH_AIAN_alone_CEN_2010,NH_Asian_alone_CEN_2010,Age5p_Hindi_ACSMOE_09_13,Age5p_Chinese_ACS_09_13,Males_CEN_2010,Females_CEN_2010,Tot_Population_CEN_2010&for=tract:#{self.fips_tract}&in=state:#{self.fips_state}+county:#{self.fips_county}"
+    self_pops = JSON.parse self_pops
+
+    @pop_entities = {
+        whites: 0,
+        blacks: 0,
+        hispanics: 0,
+        american_natives: 0,
+        indians: 0,
+        chinese: 0,
+        males: 0,
+        females: 0,
+        total: 0,
+    }
+
+    flag = 0
+    neighbor_pops.each do |pop|
+      if flag != 0
+        @pop_entities[:whites] += (pop[2].to_f/1000).ceil
+        @pop_entities[:blacks] += (pop[3].to_f/1000).ceil
+        @pop_entities[:hispanics] += (pop[4].to_f/1000).ceil
+        @pop_entities[:american_natives] += (pop[5].to_f/1000).ceil
+        @pop_entities[:indians] += (pop[7].to_i * (pop[6].to_f/20)/1000).ceil
+        @pop_entities[:chinese] += (pop[8].to_i * (pop[6].to_f/20)/1000).ceil
+        @pop_entities[:males] += (pop[9].to_f/1000).ceil
+        @pop_entities[:females] += (pop[10].to_f/1000).ceil
+        @pop_entities[:total] += (pop[11].to_f/1000).ceil
+      end
+      flag += 1
+    end
+
+    @pop_entities
+  end
+
+  def get_activity_metrics
+    Scenario.where(:zomato_cuisines => ['keywords LIKE ?', "#{self.zomato_cuisines}"]).all.order(:zomato_votes_count).pluck(:id).index(self.id)
+  end
+
+  def get_favorability
+    reviews = Review.select('id').where(restaurant_id: self.zomato_restaurant_id).all.as_json
+    arr = []
+    reviews.each do |review| arr.push review['id'] end
+    reviews = arr
+    positive_entities = Entity.where(review_id: reviews).where(sentiment_type: 'positive').sum(:sentiment)
+    negative_entities = Entity.where(review_id: reviews).where(sentiment_type: 'negative').sum(:sentiment)
+    (positive_entities.to_f - negative_entities.to_f).round
+  end
+
+  def get_good_bad_analysis
+    reviews = Review.select('id').where(restaurant_id: self.zomato_restaurant_id).all.as_json
+    arr = []
+    reviews.each do |review| arr.push review['id'] end
+    reviews = arr
+    positive_entities = Entity.where(review_id: reviews).where(sentiment_type: 'positive').all.as_json
+    negative_entities = Entity.where(review_id: reviews).where(sentiment_type: 'negative').all.as_json
+    arr = []
+    positive_entities.each do |entity| arr.push entity['entity'] end
+    positive_entities = arr
+    arr = []
+    negative_entities.each do |entity| arr.push entity['entity'] end
+    negative_entities = arr
+    other_p_entities = Entity.where(entity: positive_entities).all
+    other_n_entities = Entity.where(entity: positive_entities).all
+    result = []
+    result.push other_p_entities
+    result.push other_n_entities
+    result.push positive_entities
+    result.push negative_entities
+    result
+
   end
 
   validates :business_name, presence: true, length: { maximum: 100 }

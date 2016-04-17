@@ -24,7 +24,7 @@
         <td><%= scenario.zomato_user_rating %></td>
         <td><%= scenario.zomato_address %></td>
         <td><%= scenario.zomato_loc_city %></td>
-        <td><%= link_to scenario do %>
+        <td><%= link_to assessor_path(scenario.id), id: 'application-link' do %>
             <i class="fa fa-list-alt"></i>
         <% end %></td>
         <td><%= link_to edit_scenario_path(scenario) do %>
