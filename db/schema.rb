@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416181453) do
+ActiveRecord::Schema.define(version: 20160417022121) do
 
   create_table "emotions", force: :cascade do |t|
     t.string   "emotion_type"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20160416181453) do
     t.text     "review_text"
     t.string   "rating_color"
     t.string   "rating_text"
-    t.datetime "review_time_stamp"
+    t.integer  "review_time_stamp"
     t.integer  "likes"
     t.string   "author_name"
     t.string   "author_foodie_level"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20160416181453) do
     t.datetime "updated_at",                  null: false
     t.text     "nearby_restaurants"
     t.boolean  "primary"
+    t.float    "ranking_score"
   end
 
 end

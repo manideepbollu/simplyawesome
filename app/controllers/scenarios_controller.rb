@@ -68,10 +68,10 @@ class ScenariosController < ApplicationController
     term = params[:term]
     restaurant_list = []
     if term.length > 4
-      response = RestClient.get "https://developers.zomato.com/api/v2.1/search?q=#{term}&count=5&lat=#{cookies[:lat]}&lon=#{cookies[:lng]}&radius=15000", accept: :json, 'user-key' => 'f9b94c7980f30bbc41833a1a0ed843ca'
+      response = RestClient.get "https://developers.zomato.com/api/v2.1/search?q=#{term}&count=5&lat=#{cookies[:lat]}&lon=#{cookies[:lng]}&radius=15000&sort=rating&order=desc", accept: :json, 'user-key' => Rails.application.config.zomato_key
       if response.code == 200
         response = JSON.parse(response)
-        response['restaurants'].each do |item|
+        Parallel.each(response['restaurants'], in_threads: 5) { |item|
           restaurant_list.push({
              :label => item['restaurant']['name'] + ' at ' + item['restaurant']['location']['address'],
              :value => item['restaurant']['name'],
@@ -92,7 +92,7 @@ class ScenariosController < ApplicationController
              :average_cost_for_two => item['restaurant']['average_cost_for_two'],
              :thumb => item['restaurant']['thumb'],
           })
-        end
+        }
       end
     end
     respond_to do |format|

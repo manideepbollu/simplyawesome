@@ -4,7 +4,34 @@ class AssessorController < ApplicationController
 
   # GET /scenarios
   def home
-    @nearby_restaurants = Scenario.where(zomato_restaurant_id: eval(@scenario.nearby_restaurants))
+    nearby_list = eval(@scenario.nearby_restaurants)
+    nearby_list.push @scenario.zomato_restaurant_id
+    @ranked_list = Scenario.where(zomato_restaurant_id: nearby_list).order(ranking_score: :desc)
+    @favorites = []
+    @distance = []
+    @ranked_list.each do |item|
+      # Get the fav menu item for each restaurant
+      reviews = Review.select('id').where(restaurant_id: item.zomato_restaurant_id).all.as_json
+      arr = []
+      reviews.each do |review| arr.push review['id'] end
+      reviews = arr
+      entity = Entity.where(review_id: reviews).where(sentiment_type: 'positive').order(sentiment: :desc)
+      @favorites[item.zomato_restaurant_id] = entity.count != 0 ? entity.first.entity : 'Not available'
+      # Get distance of each restaurant from primary restaurant
+      response = RestClient.get "https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{item.location_lat},#{item.location_lng}&destinations=#{@scenario.location_lat},#{@scenario.location_lng}&key=#{Rails.application.config.google_key}"
+      response = JSON.parse(response)
+      if response['status'] == 'OK' and response['rows'][0]['elements'][0]['status'] == 'OK'
+        @distance[item.zomato_restaurant_id] = (response['rows'][0]['elements'][0]['distance']['value']*0.000621371).to_i.to_s
+      else
+        @distance[item.zomato_restaurant_id] = 'NA'
+      end
+    end
+
+    # Get Neighborhood History
+    @history = @scenario.comprehensive_rating_history
+
+    #Food Quality
+    @food_quality = @scenario.get_food_quality
   end
 
   # GET /sample.json
@@ -12,35 +39,19 @@ class AssessorController < ApplicationController
     # response = RestClient.post 'https://api.textrazor.com', {'extractors' => 'entities,words,relations,senses', 'text' => "This place isn't good. Very small spread populated by underwhelming dishes. The naan was dry and thin--perhaps it had been hanging out with some local tortillas and picked up some bad habbits. The saag paneer was mediocre and the tandoori chicken was dry as a bone. All the dishes were run of the mill. Now for the interesting part! Somebody elses dishes and glass (complete with a straw that neither I or my companion never use) magically appeared on our table between trips to the buffet. I subsequently lost my appetite upon discovering an extra fork and realizing I may have not used my own! My partner's jacket was still at the table so we know we weren't sitting at the wrong table. Management was nice enough to replace my silverware and drink, but given the subpar food and my experience, I'll never go back."}, {'x-textrazor-key' => '0d6ca499a870c7b9e3b81b4933d8634a4c849fd01b41bfaee29f0b4f'}
     # response = JSON.parse response
 
-    # res_id = eval(Scenario.where(primary: true).last.nearby_restaurants)
-    # nearby_restaurants = Scenario.select('zomato_user_rating').where(zomato_restaurant_id: res_id).all
-    # @ratings = {
-    #               Not_Rated: 0,
-    #               Poor: 0,
-    #               Average: 0,
-    #               Good: 0,
-    #               Awesome: 0,
-    #             }
-    # nearby_restaurants.each do |rest|
-    #   case rest.zomato_user_rating
-    #     when 0
-    #       @ratings[:Not_Rated] += 1
-    #     when 0.1..2
-    #       @ratings[:Poor] += 1
-    #     when 2.1..3
-    #       @ratings[:Average] += 1
-    #     when 3.1..4
-    #       @ratings[:Good] += 1
-    #     when 4.1..5
-    #       @ratings[:Awesome] += 1
-    #   end
-    # end
+    # @history = Scenario.where(primary: true).last.comprehensive_rating_history
 
-    @reviews = Review.select('id').where(restaurant_id: Scenario.where(primary: true).last.zomato_restaurant_id).all.as_json
-    arr = []
-    @reviews.each do |item| arr.push item['id'] end
-    @reviews = arr
-    @entities = Entity.where.not(property: '').where(review_id: @reviews).all
+    # arr = []
+    # @reviews.each do |item| arr.push item['id'] end
+    # @reviews = arr
+    # @entities = Entity.where.not(property: '').where(review_id: @reviews).all
+
+    # sentiments = '{"Hello":"wish", "there":[{"elsewhere":"google here"}]}'
+    # sentiments = JSON.parse sentiments
+    # @sent = ''
+    # sentiments['there'][0].each {|k,v|
+    #   @sent = k if v.include? 'google'
+    # }
 
     # ent = []
     # if response['response']['entities'] && response['response']['sentences'] && response['response']['properties']

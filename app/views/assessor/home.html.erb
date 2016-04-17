@@ -46,28 +46,101 @@
     <div class="google-map-small-container mg-bottom-20 mg-top-20">
       <div id="google-map"></div>
     </div>
-    <!-- -->
-    <% @nearby_restaurants.each do |nearby_rest| %>
-    <div class="list-group">
-      <%= link_to nearby_rest, class: 'list-group-item' do %>
-          <h4 class="list-group-item-heading"><%= nearby_rest.business_name %> <small>at <%= nearby_rest.zomato_address %></small></h4>
-          <table>
+
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading" id="ranking-header">
+        <button type="button" id="toggle-detail-ranking" class="btn btn-primary float-right">Toggle Details</button>
+        <a href="#" onclick="event.preventDefault()"><h4>This is where you stand in the competition...</h4></a>
+      </div>
+
+      <div class="panel-container" id="ranking-table" hidden>
+        <!-- Table -->
+        <div id="normal-table">
+          <table class="table">
+            <thead>
             <tr>
-              <td><strong>Cuisines</strong><br><%= nearby_rest.zomato_cuisines %></td>
-              <td><strong>User rating</strong><br><%= nearby_rest.zomato_user_rating %></td>
-              <td><strong>Users rated as</strong><br><%= nearby_rest.zomato_rating_text %></td>
-              <td><strong>No. of users voted</strong><br><%= nearby_rest.zomato_votes_count%></td>
+              <th>Rank</th>
+              <th>Business name</th>
+              <th>Menu's favorite</th>
+              <th>Rating</th>
+              <th>Votes</th>
+              <th>Distance</th>
             </tr>
-            <tr>
-              <td><strong>Price range</strong><br><%= nearby_rest.zomato_price_range %></td>
-              <td><strong>Cost for two</strong><br><%= nearby_rest.zomato_average_cost_for_two %></td>
-              <td><strong>Online delivery</strong><br><%= nearby_rest.zomato_has_online_delivery %></td>
-              <td><strong>Distance from you</strong><br><%= 'Distance' %></td>
-            </tr>
+            </thead>
+
+            <tbody>
+            <% iterator = 0 %>
+            <% @ranked_list.each do |item| %>
+                <% iterator += 1 %>
+                <tr>
+                  <td><%= iterator %></td>
+                  <td><%= item.business_name %></td>
+                  <td><%= @favorites[item.zomato_restaurant_id] %></td>
+                  <td><%= item.zomato_user_rating %></td>
+                  <td><%= item.zomato_votes_count %></td>
+                  <td><%= @distance[item.zomato_restaurant_id] << ' mi' %></td>
+                </tr>
+            <% end %>
+            </tbody>
           </table>
-      <% end %>
+        </div>
+        <!-- Table end -->
+        <!-- Panel Body -->
+        <div id="detailed-table" hidden>
+          <% iterator = 0 %>
+          <% @ranked_list.each do |nearby_rest| %>
+              <% iterator += 1 %>
+              <%= link_to nearby_rest, class: 'list-group-item' do %>
+                  <h4 class="list-group-item-heading"><%= '#' << iterator.to_s << ' ' << nearby_rest.business_name %> <small>at <%= nearby_rest.zomato_address %></small></h4>
+                  <table>
+                    <tr>
+                      <td><strong>Cuisines</strong><br><%= nearby_rest.zomato_cuisines %></td>
+                      <td><strong>User rating</strong><br><%= nearby_rest.zomato_user_rating %></td>
+                      <td><strong>Users rated as</strong><br><%= nearby_rest.zomato_rating_text %></td>
+                      <td><strong>No. of users voted</strong><br><%= nearby_rest.zomato_votes_count%></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Price range</strong><br><%= nearby_rest.zomato_price_range %></td>
+                      <td><strong>Cost for two</strong><br><%= nearby_rest.zomato_average_cost_for_two %></td>
+                      <td><strong>Online delivery</strong><br><%= nearby_rest.zomato_has_online_delivery %></td>
+                      <td><strong>Distance from you</strong><br><%= @distance[nearby_rest.zomato_restaurant_id] %></td>
+                    </tr>
+                  </table>
+              <% end %>
+          <% end %>
+        </div>
+        <!-- -->
+      </div>
     </div>
-    <% end %>
     <!-- -->
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading" id="history-header">
+          <a href="#" onclick="event.preventDefault()"><h4>Historical performance</h4></a>
+        </div>
+
+        <div class="panel-container" id="historical-graph">
+          <%= line_chart [{name: 'Neighborhood', data: @history[0]}, {name: 'Your Business', data: @history[1]}]  %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading" id="history-header">
+          <a href="#" onclick="event.preventDefault()"><h4>Food Quality in the neighborhood</h4></a>
+        </div>
+
+        <div class="panel-container" id="historical-graph">
+          <%= pie_chart(@food_quality) %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

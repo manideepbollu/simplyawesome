@@ -39,9 +39,9 @@
     <div class="field">
       <%= f.text_field :zomato_cuisines, class: 'form-control', readonly: 'readonly' %>
     </div>
-    <%= f.label :zomato_user_rating %>
+    <%= f.label :zomato_votes_count %>
     <div class="field">
-      <%= f.text_field :zomato_user_rating, class: 'form-control', readonly: 'readonly' %>
+      <%= f.text_field :zomato_votes_count, class: 'form-control', readonly: 'readonly' %>
     </div><br>
     <!-- Hidden Fields -->
     <%= f.hidden_field :zomato_postal_code %>
@@ -49,7 +49,7 @@
     <%= f.hidden_field :zomato_loc_city %>
     <%= f.hidden_field :zomato_rating_text %>
     <%= f.hidden_field :zomato_rating_color %>
-    <%= f.hidden_field :zomato_votes_count %>
+    <%= f.hidden_field :zomato_user_rating %>
     <%= f.hidden_field :zomato_has_online_delivery %>
     <%= f.hidden_field :zomato_price_range %>
     <%= f.hidden_field :zomato_average_cost_for_two %>

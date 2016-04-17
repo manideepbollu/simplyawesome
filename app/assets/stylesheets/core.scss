@@ -192,7 +192,12 @@ footer {
   }
 }
 
-.list-group {
+.list-group-item {
+  padding: 15px 15px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  margin-bottom: 0;
   table {
     width: 100%;
     margin-top: 15px;
@@ -209,6 +214,28 @@ footer {
       }
     }
   }
+}
+
+.panel-heading {
+  a {
+    text-decoration: none;
+    color: #999;
+    &:hover, &:focus {
+      text-decoration: none;
+      color: #999;
+    }
+  }
+  button {
+    margin-left: 10px;
+  }
+}
+
+.panel-container {
+  padding: 20px 20px 10px 20px;
+}
+
+#ranking-table {
+  padding: 5px 20px;
 }
 
 

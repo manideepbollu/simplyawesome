@@ -38,6 +38,11 @@
           <%= @scenario.zomato_rating_text %>
         </p>
 
+        <p>
+          <strong>No. of votes</strong><br>
+          <%= @scenario.zomato_votes_count %>
+        </p>
+
         <p id="loc_lat" hidden><%= @scenario.location_lat %></p>
         <p id="loc_lng" hidden><%= @scenario.location_lng %></p>
 
@@ -54,7 +59,7 @@
     <% @reviews.each do |review| %>
         <div class="list-group">
           <%= link_to '', class: 'list-group-item' do %>
-              <muted class="float-right">by <%= review.author_name + ' - ' + review.author_foodie_level %></muted>
+              <muted class="float-right">by <%= review.author_name + ' - ' + review.author_foodie_level + ' on ' + Time.at(review.review_time_stamp).to_date.to_s %></muted>
               <h4 class="list-group-item-heading pd-bottom-5 u-border"><%= review.rating_text %><small> / <%= review.review_rating %></small></h4>
               <p><%= review.review_text %></p>
           <% end %>
