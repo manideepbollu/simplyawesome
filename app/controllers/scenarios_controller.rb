@@ -11,7 +11,51 @@ class ScenariosController < ApplicationController
   # GET /scenarios/1
   # GET /scenarios/1.json
   def show
-    @reviews = Review.where(restaurant_id: @scenario.zomato_restaurant_id)
+    nearby_list = eval(@scenario.nearby_restaurants)
+    nearby_list.push @scenario.zomato_restaurant_id
+    @ranked_list = Scenario.where(zomato_restaurant_id: nearby_list).order(ranking_score: :desc)
+    @favorites = []
+    @distance = []
+    @ranked_list.each do |item|
+      # Get the fav menu item for each restaurant
+      reviews = Review.select('id').where(restaurant_id: item.zomato_restaurant_id).all.as_json
+      arr = []
+      reviews.each do |review| arr.push review['id'] end
+      reviews = arr
+      entity = Entity.where(review_id: reviews).where(sentiment_type: 'positive').order(sentiment: :desc)
+      @favorites[item.zomato_restaurant_id] = entity.count != 0 ? entity.first.entity : 'Not available'
+      # Get distance of each restaurant from primary restaurant
+      response = RestClient.get "https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{item.location_lat},#{item.location_lng}&destinations=#{@scenario.location_lat},#{@scenario.location_lng}&key=#{Rails.application.config.google_key}"
+      response = JSON.parse(response)
+      if response['status'] == 'OK' and response['rows'][0]['elements'][0]['status'] == 'OK'
+        @distance[item.zomato_restaurant_id] = (response['rows'][0]['elements'][0]['distance']['value']*0.000621371).to_i.to_s
+      else
+        @distance[item.zomato_restaurant_id] = 'NA'
+      end
+    end
+
+    # Get Neighborhood History
+    @history = @scenario.comprehensive_rating_history
+
+    #Food Quality
+    @food_quality = @scenario.get_food_quality
+
+    #Pop Stats
+    @pop_stats = @scenario.get_pop_stats
+    @pop_entities = {}
+    @pop_entities[:white] = (@pop_stats[:whites]*100)/@pop_stats[:total]
+    @pop_entities[:black] = (@pop_stats[:blacks]*100)/@pop_stats[:total]
+    @pop_entities[:hispanic] = (@pop_stats[:hispanics]*100)/@pop_stats[:total]
+    @pop_entities[:natives] = (@pop_stats[:american_natives]*100)/@pop_stats[:total]
+    @pop_entities[:indian] = (@pop_stats[:indians]*100)/@pop_stats[:total]
+    @pop_entities[:chinese] = (@pop_stats[:chinese]*100)/@pop_stats[:total]
+
+    # Good and bad analysis
+    arr = @scenario.get_good_bad_analysis
+    @other_good = arr[0]
+    @other_bad = arr[1]
+    @good = arr[2]
+    @bad = arr[3]
   end
 
   # GET /scenarios/new

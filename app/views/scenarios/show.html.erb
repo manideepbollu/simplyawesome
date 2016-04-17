@@ -1,7 +1,3 @@
-<% if !notice.nil?  %>
-<p id="notice" class="alert alert-success text-center" role="alert"><%= notice %></p>
-<% end %>
-
 <div class="row">
   <div class="col-md-4">
     <div class="ibox">
@@ -39,8 +35,8 @@
         </p>
 
         <p>
-          <strong>No. of votes</strong><br>
-          <%= @scenario.zomato_votes_count %>
+          <strong>Zomato rating</strong><br>
+          <%= @scenario.zomato_price_range %>
         </p>
 
         <p id="loc_lat" hidden><%= @scenario.location_lat %></p>
@@ -50,21 +46,172 @@
         <%= link_to 'Edit', edit_scenario_path(@scenario), class: 'btn btn-success float-right mg-right-10' %>
       </div>
     </div>
+    <div class="panel activity-container">
+      <div class="glyph text-center activity-icons">
+        <div class="glyph-icon flaticon-sky"></div><h4><%= @scenario.get_activity_metrics %><small> Rank</small></h4>
+      </div>
+      <div class="glyph text-center  activity-icons">
+        <div class="glyph-icon flaticon-shape"></div><h4><small><%= @favorites[@scenario.zomato_restaurant_id] %></small></h4>
+      </div>
+      <div class="glyph text-center  activity-icons">
+        <div class="glyph-icon flaticon-shapes"></div><h4><%= @scenario.get_favorability %><small> Odds</small></h4>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading" id="history-header">
+        <a href="#" onclick="event.preventDefault()"><h4>Food Quality in the neighborhood</h4></a>
+      </div>
+
+      <div class="panel-container" id="historical-graph">
+        <%= pie_chart(@food_quality) %>
+      </div>
+    </div>
   </div>
   <div class="col-md-8">
-    <div class="google-map-small-container mg-bottom-20 mg-top-20">
-      <div id="google-map"></div>
+    <div class="pop-stats row mg-bottom-20">
+      <div class="glyph text-center <%= 'favorite-pop' if @scenario.zomato_cuisines.include? 'American' or
+              @scenario.zomato_cuisines.include? 'British' or
+              @scenario.zomato_cuisines.include? 'Italian' or
+              @scenario.zomato_cuisines.include? 'French' or
+              @scenario.zomato_cuisines.include? 'Fast Food' or
+              @scenario.zomato_cuisines.include? 'Breakfast' or
+              @scenario.zomato_cuisines.include? 'Burger' or
+              @scenario.zomato_cuisines.include? 'Cafe' or
+              @scenario.zomato_cuisines.include? 'American' or
+              @scenario.zomato_cuisines.include? 'Coffee and Tea' or
+              @scenario.zomato_cuisines.include? 'International'
+      %>"><div class="glyph-icon flaticon-black"></div><%= "#{@pop_stats[:whites]}K whites" %></div>
+      <div class="glyph text-center <%= 'favorite-pop' if @scenario.zomato_cuisines.include? 'American' or
+              @scenario.zomato_cuisines.include? 'French' or
+              @scenario.zomato_cuisines.include? 'Fast Food' or
+              @scenario.zomato_cuisines.include? 'Breakfast' or
+              @scenario.zomato_cuisines.include? 'Burger' or
+              @scenario.zomato_cuisines.include? 'Cafe' or
+              @scenario.zomato_cuisines.include? 'Chili'
+      %>"><div class="glyph-icon flaticon-people-1"></div><%= "#{@pop_stats[:blacks]}K blacks" %></div>
+      <div class="glyph text-center <%= 'favorite-pop' if @scenario.zomato_cuisines.include? 'American' or
+              @scenario.zomato_cuisines.include? 'Fast Food' or
+              @scenario.zomato_cuisines.include? 'Breakfast' or
+              @scenario.zomato_cuisines.include? 'Burger' or
+              @scenario.zomato_cuisines.include? 'Cafe' or
+              @scenario.zomato_cuisines.include? 'Chili' or
+              @scenario.zomato_cuisines.include? 'Mexican' or
+              @scenario.zomato_cuisines.include? 'Mediterranean'
+      %>"><div class="glyph-icon flaticon-human"></div><%= "#{@pop_stats[:hispanics]}K hispanics" %></div>
+      <div class="glyph text-center <%= 'favorite-pop' if @scenario.zomato_cuisines.include? 'American' or
+              @scenario.zomato_cuisines.include? 'American' or
+              @scenario.zomato_cuisines.include? 'Mexican' or
+              @scenario.zomato_cuisines.include? 'Chili' or
+              @scenario.zomato_cuisines.include? 'Cafe' or
+              @scenario.zomato_cuisines.include? 'Mediterranean'
+      %>"><div class="glyph-icon flaticon-people-2"></div><%= "#{@pop_stats[:american_natives]}K natives" %></div>
+      <div class="glyph text-center <%= 'favorite-pop' if @scenario.zomato_cuisines.include? 'Asian' or
+              @scenario.zomato_cuisines.include? 'Chinese' or
+              @scenario.zomato_cuisines.include? 'Japanese' or
+              @scenario.zomato_cuisines.include? 'Korean' or
+              @scenario.zomato_cuisines.include? 'Indonesian' or
+              @scenario.zomato_cuisines.include? 'Vietnamese'
+      %>"><div class="glyph-icon flaticon-people"></div><%= "#{@pop_stats[:chinese]}K chinese" %></div>
+      <div class="glyph text-center <%= 'favorite-pop' if @scenario.zomato_cuisines.include? 'Asian' or
+              @scenario.zomato_cuisines.include? 'Chinese' or
+              @scenario.zomato_cuisines.include? 'Indian' or
+              @scenario.zomato_cuisines.include? 'Nepalese' or
+              @scenario.zomato_cuisines.include? 'Cafe' or
+              @scenario.zomato_cuisines.include? 'Chili' or
+              @scenario.zomato_cuisines.include? 'Mexican'
+      %>"><div class="glyph-icon flaticon-people-3"></div><%= "#{@pop_stats[:indians]}K indians" %></div>
     </div>
-    <!-- -->
-    <% @reviews.each do |review| %>
-        <div class="list-group">
-          <%= link_to '', class: 'list-group-item' do %>
-              <muted class="float-right">by <%= review.author_name + ' - ' + review.author_foodie_level + ' on ' + Time.at(review.review_time_stamp).to_date.to_s %></muted>
-              <h4 class="list-group-item-heading pd-bottom-5 u-border"><%= review.rating_text %><small> / <%= review.review_rating %></small></h4>
-              <p><%= review.review_text %></p>
+    <div class="row">
+      <div class="col-lg-5 pop-stats-icons">
+        <div class="glyph text-center"><div class="glyph-icon flaticon-man"></div><%= "#{@pop_stats[:males]}K males" %></div>
+        <div class="glyph text-center"><div class="glyph-icon flaticon-signs"></div><%= "#{@pop_stats[:females]}K females" %></div>
+        <div class="glyph text-center"><div class="glyph-icon flaticon-social"></div><%= "#{@pop_stats[:total]}K" %></div>
+      </div>
+      <div class="col-lg-7 pop-stats-icons">
+        <%= pie_chart @pop_entities %>
+      </div>
+    </div>
+    <!--<div class="google-map-small-container mg-bottom-20 mg-top-20">-->
+    <!--<div id="google-map"></div>-->
+    <!--</div>-->
+
+    <div class="panel panel-default mg-top-20">
+      <!-- Default panel contents -->
+      <div class="panel-heading" id="ranking-header">
+        <button type="button" id="toggle-detail-ranking" class="btn btn-primary float-right">Toggle Details</button>
+        <a href="#" onclick="event.preventDefault()"><h4>This is where you stand in the competition...</h4></a>
+      </div>
+
+      <div class="panel-container" id="ranking-table" hidden>
+        <!-- Table -->
+        <div id="normal-table">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Business name</th>
+              <th>Menu's favorite</th>
+              <th>Rating</th>
+              <th>Votes</th>
+              <th>Distance</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% iterator = 0 %>
+            <% @ranked_list.each do |item| %>
+                <% iterator += 1 %>
+                <tr>
+                  <td><%= iterator %></td>
+                  <td><%= item.business_name %></td>
+                  <td><%= @favorites[item.zomato_restaurant_id] %></td>
+                  <td><%= item.zomato_user_rating %></td>
+                  <td><%= item.zomato_votes_count %></td>
+                  <td><%= @distance[item.zomato_restaurant_id] + ' mi' %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+        <!-- Table end -->
+        <!-- Panel Body -->
+        <div id="detailed-table" hidden>
+          <% iterator = 0 %>
+          <% @ranked_list.each do |nearby_rest| %>
+              <% iterator += 1 %>
+              <%= link_to nearby_rest, class: 'list-group-item' do %>
+                  <h4 class="list-group-item-heading"><%= '#' << iterator.to_s << ' ' << nearby_rest.business_name %> <small>at <%= nearby_rest.zomato_address %></small></h4>
+                  <table>
+                    <tr>
+                      <td><strong>Cuisines</strong><br><%= nearby_rest.zomato_cuisines %></td>
+                      <td><strong>User rating</strong><br><%= nearby_rest.zomato_user_rating %></td>
+                      <td><strong>Users rated as</strong><br><%= nearby_rest.zomato_rating_text %></td>
+                      <td><strong>No. of users voted</strong><br><%= nearby_rest.zomato_votes_count%></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Price range</strong><br><%= nearby_rest.zomato_price_range %></td>
+                      <td><strong>Cost for two</strong><br><%= nearby_rest.zomato_average_cost_for_two %></td>
+                      <td><strong>Online delivery</strong><br><%= nearby_rest.zomato_has_online_delivery %></td>
+                      <td><strong>Distance from you</strong><br><%= @distance[nearby_rest.zomato_restaurant_id] + 'mi' %></td>
+                    </tr>
+                  </table>
+              <% end %>
           <% end %>
         </div>
-    <% end %>
+        <!-- -->
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading" id="history-header">
+        <a href="#" onclick="event.preventDefault()"><h4>Historical performance</h4></a>
+      </div>
+
+      <div class="panel-container" id="historical-graph">
+        <%= line_chart [{name: 'Neighborhood', data: @history[0]}, {name: 'Your Business', data: @history[1]}]  %>
+      </div>
+    </div>
     <!-- -->
   </div>
 </div>
